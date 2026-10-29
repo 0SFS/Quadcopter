@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "0sfs/quadcopter",
-  "kind": "plugin",
+  "kind": "component",
   "name": "Quadcopter",
   "summary": "Shared quadcopter contract: stick commands, position hold, the rotor wrench properties, and the spherical-grid overlap.",
   "execution": "declarative",
@@ -15,7 +15,8 @@
   },
   "dependencies": [
     "0SFS/rotating-prop",
-    "0SFS/camera-gimbal"
+    "0SFS/camera-gimbal",
+    "0SFS/multirotor"
   ],
   "quadcopter": {
     "kinematic": "drone-pgps",
