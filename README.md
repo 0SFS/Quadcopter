@@ -19,10 +19,10 @@ Each airframe mod supplies its own data in its manifest's `quad` section:
 
 Its JSBSim file holds the mass, inertia, four feet and body drag, and applies the wrench at the CG. The flight controller and `drone-camera` WebGPU capture/optical flow load only when a quadcopter is applied. Camera models are separate dependencies of their airframes.
 
-Do not publish this repository from a local task. Topics, when published: `0sfs-mod`, `0sfs-plugin`.
+Do not publish this repository from a local task. Topics, when published: `0sfs-mod`, `0sfs-component-mod`. [Modding guide](https://github.com/0SFS/docs/blob/main/modding.md).
 
 ```sh
 node scripts/validate-mod.mjs
 ```
 
-Presentation components: `0SFS/rotating-prop` and `0SFS/camera-gimbal`. Airframes declare camera follow defaults (`momentum` for quadcopters), rotor pivots, blade counts, radii and rotation directions. The props spin at the rotor speed the simulation computes. Shared components run in the host, not in remote mod code.
+Presentation components: `0SFS/rotating-prop` and `0SFS/camera-gimbal`. Airframes declare camera follow defaults (`yaw` for quadcopters), rotor pivots, blade counts, radii and rotation directions. Yaw follows aircraft heading with a smooth spring and a level horizon; Momentum remains available for following the direction of travel. The props spin at the rotor speed the simulation computes. Shared components run in the host, not in remote mod code.
